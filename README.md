@@ -62,11 +62,9 @@ The integration between the HuskyLens and the Spike Prime Hub was accomplished v
   * **VCC (Power):** Draws power directly from the Hub to the camera.
   * **GND (Ground):** Establishes a common ground for the circuit.
   * **RX / TX (Data):** Crosses the Receive (RX) and Transmit (TX) data lines, allowing the Spike Prime Hub to seamlessly ingest obstacle coordinates from the HuskyLens.
-  * * **RX / TX (Data):** Crosses the Receive (RX) and Transmit (TX) data lines, allowing the Spike Prime Hub to seamlessly ingest obstacle coordinates from the HuskyLens.
-
+  
 <img src="media/above.jpg" width="400" alt="Custom Custom Wire Harness">
 
-* **Advantage:** This direct-wiring solution reduced overall vehicle weight...
 * **Advantage:** This direct-wiring solution reduced overall vehicle weight, eliminated the dependency on a secondary battery pack, and guaranteed near-zero data latency for the AI vision feedback loop.
 
 #### Port Mapping (Updated)
@@ -100,8 +98,8 @@ In Round 1, the software architecture leverages parallel execution threads and i
 #### A. Round 1: Word Blocks Implementation
 In Round 1, the software architecture leverages parallel execution threads and introduces **two custom My Blocks**: one dedicated to driving straight and another optimized for executing precise turns.
 
-<img src="media/straight.png" width="600" alt="Round 1 Word Blocks s">
-<img src="media/turn.png" width="600" alt="Round 1 Word Blocks t">
+<img src="media/straight.png" width="400" alt="Round 1 Word Blocks s">
+<img src="media/turn.png" width="400" alt="Round 1 Word Blocks t">
 
 > **Advanced Color Detection via RGB Components (Blocks)**
 > During the first round, the LEGO color sensor had to accurately identify the orange lines on the track. Since the native SPIKE software does not include orange as a predefined color enum, we avoided the standard "Color Detection" block, which was highly prone to errors under changing ambient light. 
