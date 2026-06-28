@@ -62,6 +62,11 @@ The integration between the HuskyLens and the Spike Prime Hub was accomplished v
   * **VCC (Power):** Draws power directly from the Hub to the camera.
   * **GND (Ground):** Establishes a common ground for the circuit.
   * **RX / TX (Data):** Crosses the Receive (RX) and Transmit (TX) data lines, allowing the Spike Prime Hub to seamlessly ingest obstacle coordinates from the HuskyLens.
+  * * **RX / TX (Data):** Crosses the Receive (RX) and Transmit (TX) data lines, allowing the Spike Prime Hub to seamlessly ingest obstacle coordinates from the HuskyLens.
+
+<img src="media/above.jpg" width="400" alt="Custom Custom Wire Harness">
+
+* **Advantage:** This direct-wiring solution reduced overall vehicle weight...
 * **Advantage:** This direct-wiring solution reduced overall vehicle weight, eliminated the dependency on a secondary battery pack, and guaranteed near-zero data latency for the AI vision feedback loop.
 
 #### Port Mapping (Updated)
