@@ -95,8 +95,8 @@ In Round 1, the software architecture leverages parallel execution threads and i
 #### A. Round 1: Word Blocks Implementation
 In Round 1, the software architecture leverages parallel execution threads and introduces **two custom My Blocks**: one dedicated to driving straight and another optimized for executing precise turns.
 
-<img src="images/straight.png" width="600" alt="Round 1 Word Blocks">
-<img src="images/turn.png" width="600" alt="Round 1 Word Blocks">
+<img src="images/straight.png" width="600" alt="Round 1 Word Blocks s">
+<img src="images/turn.png" width="600" alt="Round 1 Word Blocks t">
 
 > **Advanced Color Detection via RGB Components (Blocks)**
 > During the first round, the LEGO color sensor had to accurately identify the orange lines on the track. Since the native SPIKE software does not include orange as a predefined color enum, we avoided the standard "Color Detection" block, which was highly prone to errors under changing ambient light. 
