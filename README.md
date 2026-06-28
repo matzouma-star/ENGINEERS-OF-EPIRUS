@@ -107,7 +107,7 @@ The main control loop continuously evaluates conditional logic: **IF** the Husky
 
 Below is an structural example of the custom Python architecture we developed for SPIKE v3:
 
-```python
+python
 import hub
 import motor
 import time
