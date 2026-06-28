@@ -7,55 +7,31 @@ we are angelomenos theodoros and aggelina kontogiani we are two people who like 
 
 ---
 
-## 📌 Features
+## Criterion 1: Mobility & Chassis
 
-* **Autonomous Navigation:** Precise movement and steering control using Spike Prime motors.
-* **AI Vision (HuskyLens):** Real-time color recognition, lane tracking, and pre-trained object detection.
-* **Dual-Phase Architecture:** 
-  * **Phase 1 (Open Challenge):** Implemented using visual programming (Word Blocks) for consistent lane tracking.
-  * **Phase 2 (Obstacle Challenge):** Implemented using advanced Python for dynamic decision-making and obstacle avoidance.
+### 1.1 Chassis Architecture & Design
+Our robot is constructed using the **LEGO Education Spike Prime** core set. A four-wheel configuration based on automotive principles (**Ackermann steering**) was selected, providing high stability when navigating the track's corners.
 
----
-
-## ⚙️ Installation
-
-### Prerequisites
-To open and run this project, you will need:
-* **LEGO Education SPIKE App** (Version 3.x or newer).
-* **HuskyLens Camera** configured to the correct communication protocol (I2C or Serial at 115200 baud).
-* Any required custom Python libraries for Spike-HuskyLens communication.
-
-### Steps
-1. Clone this repository:
-   ```bash
-   git clone https://github.com[your-username]/[your-repo-name].git
-   ```
-2. **For Blocks:** Open the SPIKE App, select `Import File`, and load the `.llsp` file from the blocks folder.
-3. **For Python:** Create a new Python Project in the SPIKE App and paste the code from the `.py` file in the python folder.
+* **Dimensions:** The chassis dimensions are **20 cm x 10 cm**, remaining strictly within the competition's regulation limits ($30 \times 20 \times 30$ cm).
+* **Weight Distribution:** The *Spike Prime Hub* is positioned at the **rear** of the chassis, ensuring a low center of gravity to prevent any tipping over during sharp turns.
 
 ---
 
-## 🚀 Usage
+### 1.2 Drive Mechanism
+The robot's propulsion is transmitted to the **rear wheels** via a **Spike Prime Medium Motor**.
 
-### 🧩 Part 1: Open Challenge (Word Blocks)
-In the first part, the vehicle completes the 3 required laps on the open track. The block-based program guides the robot by keeping it within the traffic lanes using the camera.
-* **Main Focus:** Line tracking and turn counting.
+* **Power Transmission:** Power is delivered **directly** from the motor to the wheels without intermediate gearing, effectively minimizing mechanical backlash.
+* **Wheel Selection:** * At the **rear**, large *LEGO Technic* wheels (62.4 x 20 mm diameter) are utilized to provide the necessary traction (grip), preventing wheel spin and ensuring precise distance tracking via the built-in motor encoders.
+  * At the **front**, medium *Spike Prime* wheels (56 × 14 mm dimensions) are implemented to achieve optimal agility and steering precision.
 
-### 🐍 Part 2: Obstacle Challenge (Python)
-In the second part, the robot must safely avoid red and green obstacle pillars. The Python script continuously requests block data (X, Y coordinates, Width, Height) from the HuskyLens via the Spike hub's port.
+---
 
-```python
-# Sample code structure for Spike Prime & HuskyLens communication
-import hub
-import time
+### 1.3 Steering Mechanism
+For steering and navigation, a front-wheel steering mechanism was designed, controlled by a second **Spike Prime Medium Motor**.
 
-def check_obstacles():
-    # Code to read data packets from HuskyLens
-    # If Red Obstacle detected -> Turn Left
-    # If Green Obstacle detected -> Turn Right
-    pass
-```
+> **Engineering Decision:** We chose *Ackermann steering* over a differential drive setup because it delivers a smoother and much more predictable trajectory through turns, drastically reducing wheel slippage.
 
-### 📸 Gallery & Robot Design
-![Our Robot Design]([image_url_or_path])
-*Add a picture of your robot or a flowchart of your strategy here.*
+* **Steering Mechanics:** The motor converts rotational movement into linear/lateral motion, moving a steering **linkage** that turns both front wheels simultaneously.
+* **Steering Angle:** The maximum steering angle of the wheels is mechanically limited to **25°** to prevent motor stalling and loss of vehicle control.
+* **Alignment:** A hardware **calibration** routine is executed upon startup, forcing the motor to find its exact "center" (absolute straight line) before the competitive round begins.
+* 
