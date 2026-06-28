@@ -120,25 +120,25 @@ import motor
 import time
 from huskylens import HuskyLensCamera  # Pre-loaded local module on the Hub
 
-# 1. HARDWARE PORT MAPPING
+#### 1. HARDWARE PORT MAPPING
 PORT_STEER = hub.port.B
 PORT_DRIVE = hub.port.A
 
-# 2. INITIALIZATION & CALIBRATION
+#### 2. INITIALIZATION & CALIBRATION
 motor.absolute_position(PORT_STEER, 0) # Calibrate steering mechanism to absolute center
 
 huskyLens = HuskyLensCamera(hub.port.A, baudrate=9600, debug=False)
 huskyLens.algorithm("ALGORITHM_OBJECT_CLASSIFICATION")
 
-# 3. CONTROL LOOP VARIABLES
+#### 3. CONTROL LOOP VARIABLES
 BASE_SPEED = 300  # Measured in Degrees Per Second (DPS)
 alpha = 0.7       # Exponential smoothing filter factor
 ex = 0            # Horizontal error tracker
 
-# Engage rear propulsion motor
+#### Engage rear propulsion motor
 motor.run(PORT_DRIVE, BASE_SPEED)
 
-# 4. MAIN AUTONOMOUS CONTROL LOOP
+#### 4. MAIN AUTONOMOUS CONTROL LOOP
 while True:
     blocks = huskyLens.getBlocks()
 
